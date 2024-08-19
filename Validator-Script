@@ -9,6 +9,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Import Wallet"
 "Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
@@ -123,6 +124,18 @@ read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 mantrachaind keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Import Wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+mantrachaind keys add $Wallet --recover
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
 
 break
