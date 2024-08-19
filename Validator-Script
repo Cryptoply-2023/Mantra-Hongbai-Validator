@@ -3,6 +3,9 @@
 while true
 do
 
+#LOGO
+curl -s https://raw.githubusercontent.com/Cryptoply-2023/Script-LOGO/main/Cryptoply_2023.txt | bash
+
 # Menu
 
 PS3='Select an action: '
